@@ -16,10 +16,4 @@ export class LoginPage {
     async validateLoginSuccess() {
         await expect(this.page).toHaveURL(/account/);
     }
-
-    async getAuthToken(): Promise<string | null> {
-        return await this.page.evaluate(() =>
-            localStorage.getItem('auth-token')
-        );
-    }
 }
